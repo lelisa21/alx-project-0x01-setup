@@ -6,13 +6,9 @@ import Footer from "@/components/layout/Footer";
 import { UserData } from "@/interfaces";
 import Button from "@/components/common/Button";
 
-interface UsersPageProps {
-  data: UserData[];
-}
-
-const Users: React.FC<UsersPageProps> = ({ data }) => {
+const Users: React.FC<{ posts: UserData[] }> = ({ posts }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [users, setUsers] = useState<UserData[]>(data);
+  const [users, setUsers] = useState<UserData[]>(posts);
 
   const handleAddUser = (newUser: UserData) => {
     setUsers((prev) => [newUser, ...prev]);
@@ -20,23 +16,23 @@ const Users: React.FC<UsersPageProps> = ({ data }) => {
 
   return (
     <div className="flex flex-col h-screen">
-        <Header />
-     <main className="p-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">Users</h1>
-        <Button
-  label="Add User"
-  variant="primary"
-  size="md"
-  onClick={() => setIsModalOpen(true)}
-/>
-      </div>
+      <Header />
+      <main className="p-4">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-semibold">Users</h1>
+          <Button
+            label="Add User"
+            variant="primary"
+            size="md"
+            onClick={() => setIsModalOpen(true)}
+          />
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {users.map((user) => (
-          <UserCard key={user.id} user={user} />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {posts.map((user) => (
+            <UserCard key={user.id} user={user} />
+          ))}
+        </div>
       </main>
       {isModalOpen && (
         <UserModal
@@ -55,11 +51,11 @@ const Users: React.FC<UsersPageProps> = ({ data }) => {
 
 export async function getStaticProps() {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = await response.json();
+  const posts = await response.json();
 
   return {
     props: {
-      data,
+      posts,
     },
   };
 }
