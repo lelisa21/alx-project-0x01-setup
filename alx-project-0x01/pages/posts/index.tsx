@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { PostData } from "@/interfaces";
 import { useState } from "react";
 
-const Posts: React.FC<{ posts: PostProps[] }> = ({ posts }) => {
+const Posts: React.FC< PostProps> = ({ posts }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [post, setPost] = useState<PostData | null>(null);
 
