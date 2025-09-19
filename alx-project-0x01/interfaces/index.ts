@@ -61,8 +61,20 @@ export interface UserData {
 }
 
 export interface UserModalProps {
-  user: UserData | null;   
+  user: UserData | null;
+   isLoading: boolean   
   isOpen: boolean;        
   onClose: () => void; 
   onSubmit: (user: UserData) => void;    
+}
+
+
+export interface ButtonProps {
+  label: string;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  variant?: "primary" | "secondary" | "danger";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  disabled?: boolean;
 }

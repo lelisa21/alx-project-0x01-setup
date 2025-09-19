@@ -49,7 +49,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit, user }) => {
         </h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Name */}
+
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
               Name
@@ -65,7 +65,6 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit, user }) => {
             />
           </div>
 
-          {/* Username */}
           <div className="mb-4">
             <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
               Username
@@ -81,7 +80,6 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit, user }) => {
             />
           </div>
 
-          {/* Email */}
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
               Email
@@ -97,7 +95,6 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit, user }) => {
             />
           </div>
 
-          {/* Phone */}
           <div className="mb-4">
             <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
               Phone
@@ -113,7 +110,6 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit, user }) => {
             />
           </div>
 
-          {/* Website */}
           <div className="mb-4">
             <label htmlFor="website" className="block text-gray-700 font-medium mb-2">
               Website
@@ -128,8 +124,6 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit, user }) => {
               placeholder="Enter website"
             />
           </div>
-
-          {/* Actions */}
           <div className="flex justify-center items-center gap-4">
             <button
               type="button"

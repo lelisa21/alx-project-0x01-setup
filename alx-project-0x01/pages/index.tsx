@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 const Home: React.FC = () => {
 return(
     <div className="flex flex-col h-screen">
@@ -11,9 +12,8 @@ return(
                 <p className="mt-4 text-white">We&#39;re glad you&#39;re here. Explore and enjoy your experience.</p>
                 <button className="mt-4 px-6 py-3 bg-white text-blue-500 rounded-full font-semibold hover:bg-gray-200 transition">Get Started</button>
             </div>
-        
-
         </main>
+        <Footer />
     </div>
 )
 }
